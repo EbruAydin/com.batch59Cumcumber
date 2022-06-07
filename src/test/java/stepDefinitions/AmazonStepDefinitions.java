@@ -75,7 +75,6 @@ public class AmazonStepDefinitions {
     public void sonucun_icerdigini_test_eder(String istenenKelime) {
         String arananKelime=istenenKelime;
         String actualAramaSonucStr=amazonPage.aramaSonucElementi.getText();
-
         Assert.assertTrue(actualAramaSonucStr.contains(arananKelime));
     }
 
