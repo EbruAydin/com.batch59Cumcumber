@@ -33,6 +33,8 @@ Feature: US1009 Datatables sitesine 5 farkli giris yapalim
     And kullanici 1 sn bekler
     And sayfayi kapatir
 
+    #And tum bilgileri "<firstName>","<lastName>","<position>","<office>","<extension>","<startDate>","<salary>" girer
+
     Examples:
       | firstname | lastname | position | office | extension | startDate  | salary |
       | Alim     | Alim     | qa       | ankara | UI        | 2021-10-11 | 10000  |

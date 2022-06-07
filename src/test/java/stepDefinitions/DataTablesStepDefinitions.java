@@ -51,6 +51,23 @@ public class DataTablesStepDefinitions {
         obj.salary.sendKeys(salary);
     }
 
+
+    /*
+    @And("tum bilgileri {string},{string},{string},{string},{string},{string},{string} girer")
+    public void tumBilgileriGirer(String firstName, String lastName,
+                                  String position, String office ,
+                                  String extension, String startDate,
+                                  String salary) {
+        actions.sendKeys(firstName).sendKeys(Keys.TAB).sendKeys(lastName).sendKeys(Keys.TAB)
+                .sendKeys(position).sendKeys(Keys.TAB).sendKeys(office).sendKeys(Keys.TAB)
+                .sendKeys(extension).sendKeys(Keys.TAB).sendKeys(startDate).sendKeys(Keys.TAB).sendKeys(salary).perform();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+     */
     @Then("Create tusuna basar")
     public void create_tusuna_basar() {
         obj.create.click();
