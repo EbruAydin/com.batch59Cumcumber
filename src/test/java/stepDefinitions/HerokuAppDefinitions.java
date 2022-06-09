@@ -34,4 +34,6 @@ public class HerokuAppDefinitions {
     public void delete_butonunun_gorunmedigini_test_edin() {
         Assert.assertTrue(herokuappPage.deleteListesi.isEmpty());
     }
+
+
 }
