@@ -1,0 +1,64 @@
+=========================Raporlama========================
+Cucumber raporları, şirketlerin Cucumber kullanmasının ana nedenlerinden biridir.
+
+ Html rapor almak icin runner classına
+eklenti(plugin) eklememiz yeterlidir.
+
+plugin={"html:target\\cucumber-reports.html"}
+
+=====================Hooks ve Screen Shot Ekleme===================
+ Cucumber hooks,senaryolardan önce veya sonra çalışan kod
+bloklarına sahip olan bir classtır. (Daha once kullandigimiz
+TestBase gibi)
+➢ @Before ve @After annotation’ları kullanılarak kodları projemizde
+ve step definitionlarda kullanabiliriz.
+➢ ucumber hooks, kod çalışma akışını daha iyi yönetmemizi
+kolaylaştırır ve kod fazlalığını azaltmamıza yardımcı olur.
+
+
+===============Yeni Raporlar Ekleme=================
+Plugin ekleyerek yeni raporlar da olusturabiliriz
+➢ Tester’lar icin onemli olan rapor Html olsa da json
+ve xml formatinda da rapor almak mumkundur.
+➢ Ayrica maven-cucumber-reporting plugin
+yuklemek istersek pom.xml’e plugin ekleyebiliriz
+
+plugin={"html:target\\cucumber-reports.html“,
+"json:target/json-reports/cucumber.json",
+"junit:target/xml-report/cucumber.xml" }
+
+
+=============================Paralel Testing==================
+➢ Paralel testing: Birden fazla browser’in es zamanli calistirilmasidir.
+➢ Cucumber ile parallel test calistirmak testing’ye gore daha zordur.
+➢ Paralel calistirabilmek icin birden fazla Runner Class’ina ihtiyacimiz var
+Ancak raporlama ihtiyaci varsa TestNG’deki karmasik raporlama prosesleri yerine cucumber’da
+parallel calistirmanin zorluguna katlanmak tercih edilebilir.
+➢ Cucumber’da, testleri paralel olarak çalıştırabilmek için bazı eklentilere(plugin) ve
+yapılandırmalara da ihtiyacımız vardir.
+➢ Pom da yaptigimiz ayarlamalardan sonra testleri Runner’dan degil Terminalden “mvn clean verify”
+kodunu yazarak calistiracagiz
+
+===============================Paralel Testing=====================
+1. Birden fazla runner classı ekleyin. Ayni anda calistirmak istediginiz kadar Runner Class’ina sahip
+olmalisiniz. Class isimleri belirledigimiz ortak bir String icermelidir. Ornegin :TestRunner.
+a. SmokeTestRunner
+b. FirstTestRunner
+c. SecondTestRunner
+2. maven-failsafe-plugin eklentisi ekleyin.(Belirli testler başarısız olduktan sonra testleri çalıştırmaya
+devam için.)
+3. maven-surefire-plugin ekleyin ve yapılandırın. Paralel test icin gerekli eklentidir
+4. maven-cucumber-reporting plugin ekle. Gelismis rapor icin gereklidir
+
+JDK sorunu yasayanlar icin opsiyonel plugin
+<plugin>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.1</version>
+<configuration>
+<source>1.7</source>
+<target>1.7</target>
+<fork>true</fork>
+<executable>C:\Program
+Files\Java\jdk1.8.0_251\bin\javac</executable>
+</configuration>
+</plugin

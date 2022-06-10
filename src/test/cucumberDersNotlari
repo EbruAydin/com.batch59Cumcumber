@@ -1,0 +1,39 @@
+Feature: dlfsldkfsd
+Scenario: blablabla
+
+============Background========================
+Farklı senaryoların başında ortak adımlarımız varsa:
+1. Feature file in basina Background oluşturun.
+2. Bu ortak adımları Background altına yazın.
+3. Background, Feature file’daki her
+Scenario’dan önce çalışır
+4. Duplication olmadigindan emin olun.
+Background un altındaki adımı yazdıktan
+sonra senaryolardan silin
+
+========Feature File icerisinde Parametre Kullanma======
+Kodlarimizi parametreli ve dinamik hale getirmek için
+feature file da degisken olarak kullanacagimiz
+kelimeyi çift tırnak " " icine aliriz.
+
+mesela Given kullanici "amazonUrl" sayfasina gider
+Kodlarimizi parametreli olarak yazdiktan sonra sadece " " içindeki
+değeri değiştirerek test datalarini feature file dan kontrol edebiliriz.
+➢ Kodlarimizi parametreli olarak yazmak framework’u daha dinamik
+hale getirir(kodumuz artik hard coded degildir diyebiliriz)
+
+==========Feature File'i Scenario Outline Ile Kullanma==============
+➢ Scenario Outline: ayni testte birden fazla datayi
+kullanmamizi saglar
+
+➢ Bir liste kullanmak istedigimiz degeri “<value>”
+seklinde yazariz
+
+➢ Daha sonra testin sonuna Examples: yazip ilk satir
+olarak |value| yazariz ve altina kullanmak istedigimiz
+degerleri ekleriz. (|elma|,|armut|… gibi)
+
+Class Work : US1001 de kullandigimiz feature dosyasi
+altinda yeni bir Scenario olusturalim TC04 ve orada
+yaptigimiz aramayi Scenario Outline kullanarak farkli
+urunler icin yapalim
