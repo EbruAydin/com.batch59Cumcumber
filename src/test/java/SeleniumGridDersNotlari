@@ -1,0 +1,16 @@
+SeleniumGrid nasil kurulur:
+
+https://www.selenium.dev/downloads/ bu siteden Selenium(Server)Grid kismini indir. 4.4.0 versiyonu
+indirdim.
+
+Daha sonra iki browser sectim, Chrome ve Firefox diye. Bunun stable kismini indirdim ve C kismina bu browserlari
+zip'ten cikarip koydum. SeleniumGrid'i ise zip halinde tuttum. Bu dosyalarin dosya yolune cmd yazdik. Siyah bir ekran
+geliyor. Ona java -jar selenium-server-4.4.0.jar standalone kodunu yapistiriyoruz. bunu bize sirkette verecekler. Enter
+diyoruz. burada sonrasinda http://192.168.0.13:4444/ui kodu geliyor. bunu alip browser'a yapistir.
+
+Cuucmber'de yapman gereken de feature. stepdegfinition ve runner classlar olusturmak.
+
+ondan sonrasinda da cmd acik, http linkini de koydugun yer acik olarak run ediyorsun.
+
+yuzde 50 kullandiigini gosterecek, bu sorun degil bir daha run edersen 100de 100 kullanmis olacaksin.
+100de 100 olduktan sonra kendisini yenilemis olacak

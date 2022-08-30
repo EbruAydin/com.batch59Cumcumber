@@ -12,7 +12,7 @@ public class GuruPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//*[text()='Accept All']")
+    @FindBy(xpath = "//button[@id='save']")
     public WebElement acceptCookies;
 
     @FindBy(xpath = "//thead//tr//th")
